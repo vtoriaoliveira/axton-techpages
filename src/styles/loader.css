@@ -1,0 +1,45 @@
+/* ── LOADER ── */
+.loader-wrap {
+  position: fixed; inset: 0; background: var(--bg);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  z-index: 200; transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.loader-wrap.exit { opacity: 0; transform: scale(1.04); pointer-events: none; }
+.loader-wrap::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(168,85,247,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168,85,247,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%);
+}
+.loader-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  letter-spacing: 0.12em; color: var(--text); line-height: 1;
+}
+.loader-logo span {
+  background: linear-gradient(90deg, #a855f7, #ffffff);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.loader-tagline {
+  font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--muted); margin-top: 0.5rem; margin-bottom: 2.8rem;
+}
+.progress-track {
+  width: clamp(220px, 40vw, 380px); height: 2px;
+  background: rgba(255,255,255,0.07); border-radius: 999px;
+  position: relative; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, #a855f7, #ffffff);
+  box-shadow: 0 0 12px rgba(168,85,247,0.7); transition: width 0.1s linear;
+}
+.progress-shine {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
+  animation: shine 1.4s ease-in-out infinite;
+}
+@keyframes shine { from { transform: translateX(-100%); } to { transform: translateX(200%); } }
+.progress-pct { margin-top: 1rem; font-size: 0.72rem; letter-spacing: 0.25em; color: var(--muted); }

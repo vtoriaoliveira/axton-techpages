@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #09060f;
+  --surface: #120d1e;
+  --accent: #a855f7;
+  --accent2: #7c3aed;
+  --text: #f0edf8;
+  --muted: #6b6080;
+  --glow: 0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); }
